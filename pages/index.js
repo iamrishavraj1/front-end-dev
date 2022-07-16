@@ -1,13 +1,13 @@
-import Link from "next/link";
-const Home = () => {
+import { getFeaturedEvents } from "../data";
+import EventList from "../components/events/event-list";
+const HomePage = () => {
+  const featuredEvents = getFeaturedEvents();
+
   return (
     <>
-      <h1>Hello World </h1>
-      <Link href="./portfolio">Portfolio</Link>
-      <br />
-      <Link href="./clients">Clients</Link>
+      <EventList items={featuredEvents} />
     </>
   );
 };
 
-export default Home;
+export default HomePage;
